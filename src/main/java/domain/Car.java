@@ -24,7 +24,7 @@ public class Car {
         }
     }
 
-    boolean isCarMove(int random) {
+    public boolean isCarMove(int random) {
         if(random>=POSSIBLE_NUMBER_FOR_MOVE){
             return true;
         }
@@ -36,6 +36,10 @@ public class Car {
         for (int i=0; i<position; i++){
             System.out.print(INDICATION_CAR_MOVE);
         }
+    }
+
+    public int getPosition() {
+        return position;
     }
 
 
