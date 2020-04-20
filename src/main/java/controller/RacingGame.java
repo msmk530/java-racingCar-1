@@ -13,6 +13,8 @@ public class RacingGame {
         Car[] cars = makeCar(allCarOfRacingGame);
 
         gameProgress(round, cars);
+
+
     }
 
     private Car[] makeCar(String[] allCarOfRacingGame) {

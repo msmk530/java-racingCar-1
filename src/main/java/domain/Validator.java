@@ -6,7 +6,6 @@ public class Validator {
     private static final int MINIMUM_CAR_NAME_LENGTH = 1;
     private static final int MAXIMUM_CAR_NAME_LENGTH = 5;
     private static final int MINIMUM_ROUND_NUMBER = 1;
-    private static final int POSSIBLE_NUMBER_FOR_MOVE = 4;
 
     public static boolean isValidNameLength(String[] allCarOfRacingGame) {
         for (String carName : allCarOfRacingGame) {
@@ -24,13 +23,6 @@ public class Validator {
             return false;
         }
         return true;
-    }
-
-    public static boolean isCarMove(int random) {
-        if(random>=POSSIBLE_NUMBER_FOR_MOVE){
-            return true;
-        }
-        return false;
     }
 
 }
