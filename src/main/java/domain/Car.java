@@ -24,7 +24,7 @@ public class Car {
         }
     }
 
-    public boolean isCarMove(int random) {
+    boolean isCarMove(int random) {
         if(random>=POSSIBLE_NUMBER_FOR_MOVE){
             return true;
         }
