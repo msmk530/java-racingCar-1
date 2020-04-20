@@ -6,9 +6,6 @@ public class RacingGame {
 
     public void run() {
         String[] allCarOfRacingGame = InputView.inputCarsName();
-
+        int round = InputView.inputRound();
     }
-
-
-
 }
