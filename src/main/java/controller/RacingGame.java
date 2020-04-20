@@ -3,35 +3,20 @@ package controller;
 import domain.Car;
 import domain.GameProgress;
 import view.InputView;
+import view.OutputView;
 
 
 public class RacingGame {
 
     public void run() {
-        String[] allCarOfRacingGame = InputView.inputCarsName();
+        Car[] cars = GameProgress.makeCar(InputView.inputCarsName());
         int round = InputView.inputRound();
-        Car[] cars = makeCar(allCarOfRacingGame);
 
-        gameProgress(round, cars);
-
-
-    }
-
-    private Car[] makeCar(String[] allCarOfRacingGame) {
-        Car[] cars = new Car[allCarOfRacingGame.length];
-
-        for (int i = 0; i < cars.length; i++) {
-            cars[i] = new Car(allCarOfRacingGame[i].trim());
+        for(int i=0; i<round; i++){
+            GameProgress.progressAllRound(cars);
+            OutputView.printMoveProgress(cars);
         }
 
-        return cars;
-    }
-
-    private void gameProgress(int round, Car[] cars) {
-        for (int i = 0; i < round; i++) {
-            GameProgress.moveProgress(cars);
-            System.out.print("\n\n");
-        }
     }
 
 
