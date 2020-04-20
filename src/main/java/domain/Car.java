@@ -2,10 +2,12 @@ package domain;
 
 import util.RandomNumberGenerator;
 
+import java.util.Objects;
+
 public class Car {
     private static final String INDICATION_CAR_MOVE = "-";
+    private static final String COLON_FOR_CAR_MOVE = " : ";
     private static final int START_POSITION = 0;
-    private static final int POSSIBLE_NUMBER_FOR_MOVE = 4;
 
     private String name;
     private int position;
@@ -15,12 +17,19 @@ public class Car {
         this.position = START_POSITION;
     }
 
-    public void updatePosition() {
-        int random = RandomNumberGenerator.generateRandomNumber();
-        if (random >= POSSIBLE_NUMBER_FOR_MOVE) {
+    public void updatePosition(int random) {
+        if (Validator.isCarMove(random)) {
             position++;
         }
     }
+
+    public void printPosition() {
+        System.out.print(name + COLON_FOR_CAR_MOVE);
+        for (int i=0; i<position; i++){
+            System.out.print(INDICATION_CAR_MOVE);
+        }
+    }
+
 
 }
 

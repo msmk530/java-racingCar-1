@@ -16,4 +16,10 @@ class ValidatorTest {
     void isValidRoundNumber() {
         assertThat(Validator.isValidRoundNumber(-1)).isTrue();
     }
+
+    @Test
+    void isCarMove() {
+        assertThat(Validator.isCarMove(2)).isTrue();
+        assertThat(Validator.isCarMove(4)).isTrue();
+    }
 }
