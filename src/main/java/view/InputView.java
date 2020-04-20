@@ -50,4 +50,5 @@ public class InputView {
         }
         return true;
     }
+
 }
