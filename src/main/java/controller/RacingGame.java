@@ -10,11 +10,12 @@ import view.OutputView;
 public class RacingGame {
 
     public void run() {
-        Car[] cars = GameProgress.makeCar(InputView.inputCarsName());
+        String[] carsName = InputView.inputCarsName();
+        Car[] cars = GameProgress.makeCar(carsName);
         int round = InputView.inputRound();
 
         for (int i = 0; i < round; i++) {
-            GameProgress.progressAllRound(cars);
+            GameProgress.progressRound(cars);
             OutputView.printMoveProgress(cars);
         }
 
