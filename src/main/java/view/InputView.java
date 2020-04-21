@@ -17,7 +17,7 @@ public class InputView {
             System.out.println(INPUT_CARS_NAME_MESSAGE);
             carsName = sc.nextLine();
             allCarOfRacingGame = carsName.split(FOR_SPLIT_CARNAME);
-        } while (!Validator.isValidNameLength(allCarOfRacingGame));
+        } while (!Validator.isValidNameLength(allCarOfRacingGame) || !Validator.isDuplicatedName(allCarOfRacingGame));
         return allCarOfRacingGame;
     }
 

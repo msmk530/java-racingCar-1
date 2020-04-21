@@ -17,4 +17,5 @@ class ValidatorTest {
     void 라운드_숫자_테스트() {
         assertThat(Validator.isValidRoundNumber(-1)).isTrue();
     }
+
 }
