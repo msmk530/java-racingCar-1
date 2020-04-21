@@ -6,11 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CarTest {
-
     private Car car;
 
     @BeforeEach
@@ -39,5 +37,4 @@ class CarTest {
         positionTestCar.updatePosition(4);
         assertThat(car.getPosition()).isEqualTo(1);
     }
-
 }

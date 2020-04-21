@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class WinnerProgress {
-
     public static int calculateWinnerPosition(Car[] cars) {
         List<Integer> carsPosition = new LinkedList<>();
 
@@ -26,5 +25,4 @@ public class WinnerProgress {
         }
         return winners;
     }
-
 }

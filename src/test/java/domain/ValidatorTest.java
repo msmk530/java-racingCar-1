@@ -21,7 +21,7 @@ class ValidatorTest {
 
     @Test
     void 중복_이름_테스트() {
-        String[] testNames = {"kim","min","sub","sub"};
+        String[] testNames = {"kim", "min", "sub", "sub"};
         assertThat(Validator.isDuplicatedName(testNames)).isTrue();
     }
 }

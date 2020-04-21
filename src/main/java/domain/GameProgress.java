@@ -3,7 +3,6 @@ package domain;
 import util.RandomNumberGenerator;
 
 public class GameProgress {
-
     public static Car[] makeCar(String[] allCarOfRacingGame) {
         Car[] cars = new Car[allCarOfRacingGame.length];
 
@@ -19,5 +18,4 @@ public class GameProgress {
             car.updatePosition(RandomNumberGenerator.generateRandomNumber());
         }
     }
-
 }

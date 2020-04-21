@@ -28,5 +28,5 @@ public class InputView {
             round = sc.nextInt();
         } while (!Validator.isValidRoundNumber(round));
         return round;
-}
+    }
 }

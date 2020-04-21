@@ -3,18 +3,15 @@ package domain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GameProgressTest {
-
     private Car[] cars;
 
     @BeforeEach
     void setUp() {
         String[] allCarOfName = {"kim  ", "min  ", "sub  "};
         cars = GameProgress.makeCar(allCarOfName);
-
     }
 
     @Test
@@ -33,13 +30,14 @@ class GameProgressTest {
         }
 
         GameProgress.progressRound(cars);
+
         for (Car car : cars) {
-          if(car.getPosition()!=0){
-              updateFlag = true;
-              break;
-          }
+            if (car.getPosition() != 0) {
+                updateFlag = true;
+                break;
+            }
         }
+
         assertThat(updateFlag).isEqualTo(true);
     }
-
 }

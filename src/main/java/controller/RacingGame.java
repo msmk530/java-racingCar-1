@@ -8,7 +8,6 @@ import view.OutputView;
 
 
 public class RacingGame {
-
     public void run() {
         String[] carsName = InputView.inputCarsName();
         Car[] cars = GameProgress.makeCar(carsName);
@@ -21,7 +20,5 @@ public class RacingGame {
 
         int winnerPosition = WinnerProgress.calculateWinnerPosition(cars);
         OutputView.printWinners(WinnerProgress.extractWinners(cars, winnerPosition));
-
     }
-
 }

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class WinnerProgressTest {
-
     private Car[] cars;
 
     @BeforeEach
@@ -20,7 +19,6 @@ class WinnerProgressTest {
 
         cars[0].updatePosition(4);
         cars[0].updatePosition(4);
-
     }
 
     @Test
@@ -34,5 +32,4 @@ class WinnerProgressTest {
         String winnerName = cars[0].getName();
         assertThat(winnerName).isEqualTo("min");
     }
-
 }
