@@ -3,6 +3,10 @@ package domain;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestTemplate;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -10,8 +14,9 @@ class ValidatorTest {
 
     @Test
     void 문자열_길이_테스트() {
-        String[] testNames = {"kim", "min", "subbbb"};
-        assertThat(Validator.isValidNameLength(testNames)).isTrue();
+        List<String> carNames = new LinkedList<>();
+        carNames.add("kimminsub");
+        assertThat(Validator.isValidNameLength(carNames)).isTrue();
     }
 
     @Test
@@ -21,7 +26,8 @@ class ValidatorTest {
 
     @Test
     void 중복_이름_테스트() {
-        String[] testNames = {"kim", "min", "sub", "sub"};
-        assertThat(Validator.isDuplicatedName(testNames)).isTrue();
+        String[] testNames = {"kim","min","sub","kim"};
+        List<String> carNames = Arrays.asList(testNames);
+        assertThat(Validator.isDuplicatedName(carNames)).isTrue();
     }
 }

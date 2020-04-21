@@ -3,6 +3,9 @@ package domain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GameProgressTest {
@@ -11,7 +14,8 @@ class GameProgressTest {
     @BeforeEach
     void setUp() {
         String[] allCarOfName = {"kim  ", "min  ", "sub  "};
-        cars = GameProgress.makeCar(allCarOfName);
+        List<String> carNames = Arrays.asList(allCarOfName);
+        cars = GameProgress.makeCar(carNames);
     }
 
     @Test
