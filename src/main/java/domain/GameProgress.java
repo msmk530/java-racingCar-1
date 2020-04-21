@@ -1,7 +1,10 @@
 package domain;
 
 import util.RandomNumberGenerator;
-import view.OutputView;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class GameProgress {
 
@@ -16,12 +19,27 @@ public class GameProgress {
     }
 
     public static void progressAllRound(Car[] cars) {
-            updatePositionProgress(cars);
+        updatePositionProgress(cars);
     }
 
-    private static void updatePositionProgress(Car[] cars){
-            for(Car car : cars){
-                car.updatePosition(RandomNumberGenerator.generateRandomNumber());
-            }
+    private static void updatePositionProgress(Car[] cars) {
+        for (Car car : cars) {
+            car.updatePosition(RandomNumberGenerator.generateRandomNumber());
+        }
     }
+
+    public static int calculateWinnerPosition(Car[] cars){
+        int winnerPostion;
+        List<Integer> carsPosition = new LinkedList<>();
+
+        for (Car car : cars) {
+            carsPosition.add(car.getPosition());
+        }
+        Collections.sort(carsPosition);
+
+        return carsPosition.get(carsPosition.size()-1);
+    }
+
+
+
 }
