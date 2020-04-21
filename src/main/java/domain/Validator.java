@@ -14,6 +14,10 @@ public class Validator {
     private static final int MAXIMUM_CAR_NAME_LENGTH = 5;
     private static final int MINIMUM_ROUND_NUMBER = 1;
 
+    private Validator() {
+        throw new AssertionError();
+    }
+
     public static boolean isValidNameLength(List<String> allCarOfRacingGame) {
         for (String carName : allCarOfRacingGame) {
             if (carName.length() < MINIMUM_CAR_NAME_LENGTH || carName.length() > MAXIMUM_CAR_NAME_LENGTH) {

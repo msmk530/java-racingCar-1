@@ -5,6 +5,10 @@ import util.RandomNumberGenerator;
 import java.util.List;
 
 public class GameProgress {
+    private GameProgress() {
+        throw new AssertionError();
+    }
+
     public static Car[] makeCar(List<String> allCarOfRacingGame) {
         Car[] cars = new Car[allCarOfRacingGame.size()];
 

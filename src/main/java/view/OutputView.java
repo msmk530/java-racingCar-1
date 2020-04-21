@@ -10,11 +10,15 @@ public class OutputView {
     public static final String SEPARATOR_FOR_CAR_NAME = ",";
     public static final String PRINT_WINNER_MESSAGE = "가 우승하였습니다.";
 
+    private OutputView() {
+        throw new AssertionError();
+    }
+
     public static void printMoveProgress(Car[] cars) {
         for (Car car : cars) {
             int carPosition = car.getPosition();
             String carName = car.getName();
-            currentPositionPrint(carName,carPosition);
+            currentPositionPrint(carName, carPosition);
             System.out.print("\n");
         }
         System.out.print("\n\n");

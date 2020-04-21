@@ -5,6 +5,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class WinnerProgress {
+
+    private WinnerProgress() {
+        throw new AssertionError();
+    }
+
     public static int calculateWinnerPosition(Car[] cars) {
         List<Integer> carsPosition = new LinkedList<>();
 

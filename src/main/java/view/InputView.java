@@ -12,6 +12,10 @@ public class InputView {
     private static final String INPUT_ROUND_MESSAGE = "시도할 회수는 몇회인가요?";
     private static Scanner sc = new Scanner(System.in);
 
+    private InputView() {
+        throw new AssertionError();
+    }
+
     public static List<String> inputCarNames() {
         String carName;
         List<String> allCarOfRacingGame;
