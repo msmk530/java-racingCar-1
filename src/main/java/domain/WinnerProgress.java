@@ -24,7 +24,7 @@ public class WinnerProgress {
     public static List<String> extractWinners(Car[] cars, int winnerPosition) {
         List<String> winners = new LinkedList<>();
         for (Car car : cars) {
-            if (car.getPosition() == winnerPosition) {
+            if (car.isWinner(winnerPosition)) {
                 winners.add(car.getName());
             }
         }
