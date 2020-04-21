@@ -17,7 +17,7 @@ public class WinnerProgress {
         return carsPosition.get(carsPosition.size() - 1);
     }
 
-    public static List<String> selectWinners(Car[] cars, int winnerPosition) {
+    public static List<String> extractWinners(Car[] cars, int winnerPosition) {
         List<String> winners = new LinkedList<>();
         for (Car car : cars) {
             if (car.getPosition() == winnerPosition) {
@@ -26,6 +26,5 @@ public class WinnerProgress {
         }
         return winners;
     }
-
 
 }

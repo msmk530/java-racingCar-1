@@ -19,9 +19,8 @@ public class RacingGame {
         }
 
         int winnerPosition = WinnerProgress.calculateWinnerPosition(cars);
-        OutputView.printWinners(WinnerProgress.selectWinners(cars, winnerPosition));
+        OutputView.printWinners(WinnerProgress.extractWinners(cars, winnerPosition));
 
     }
-
 
 }
