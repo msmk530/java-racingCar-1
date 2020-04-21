@@ -25,7 +25,7 @@ public class Car {
     }
 
     boolean isCarMove(int random) {
-        if(random>=POSSIBLE_NUMBER_FOR_MOVE){
+        if (random >= POSSIBLE_NUMBER_FOR_MOVE) {
             return true;
         }
         return false;
@@ -33,7 +33,7 @@ public class Car {
 
     public void printPosition() {
         System.out.print(name + COLON_FOR_CAR_MOVE);
-        for (int i=0; i<position; i++){
+        for (int i = 0; i < position; i++) {
             System.out.print(INDICATION_CAR_MOVE);
         }
     }
@@ -42,6 +42,9 @@ public class Car {
         return position;
     }
 
+    public String getName() {
+        return name;
+    }
 
 }
 

@@ -28,7 +28,7 @@ public class GameProgress {
         }
     }
 
-    public static int calculateWinnerPosition(Car[] cars){
+    public static int calculateWinnerPosition(Car[] cars) {
         int winnerPostion;
         List<Integer> carsPosition = new LinkedList<>();
 
@@ -37,9 +37,8 @@ public class GameProgress {
         }
         Collections.sort(carsPosition);
 
-        return carsPosition.get(carsPosition.size()-1);
+        return carsPosition.get(carsPosition.size() - 1);
     }
-
 
 
 }

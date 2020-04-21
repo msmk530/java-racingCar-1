@@ -18,7 +18,7 @@ public class Validator {
     }
 
     public static boolean isValidRoundNumber(int round) {
-        if(round<MINIMUM_ROUND_NUMBER){
+        if (round < MINIMUM_ROUND_NUMBER) {
             System.out.println(ROUND_NUMBER_ERROR_MESSAGE);
             return false;
         }

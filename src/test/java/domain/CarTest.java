@@ -29,7 +29,7 @@ class CarTest {
     }
 
     @Test
-    void 랜덤숫자에따른_이동여부_테스트(){
+    void 랜덤숫자에따른_이동여부_테스트() {
         assertThat(car.isCarMove(3)).isTrue();
     }
 
