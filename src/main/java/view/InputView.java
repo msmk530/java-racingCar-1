@@ -2,6 +2,8 @@ package view;
 
 import domain.Validator;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
@@ -10,13 +12,13 @@ public class InputView {
     private static final String INPUT_ROUND_MESSAGE = "시도할 회수는 몇회인가요?";
     private static Scanner sc = new Scanner(System.in);
 
-    public static String[] inputCarsName() {
-        String carsName;
-        String[] allCarOfRacingGame;
+    public static List<String> inputCarNames() {
+        String carName;
+        List<String> allCarOfRacingGame;
         do {
             System.out.println(INPUT_CARS_NAME_MESSAGE);
-            carsName = sc.nextLine();
-            allCarOfRacingGame = carsName.split(FOR_SPLIT_CARNAME);
+            carName = sc.nextLine();
+            allCarOfRacingGame = Arrays.asList(carName.split(FOR_SPLIT_CARNAME));
         } while (!Validator.isValidNameLength(allCarOfRacingGame) || !Validator.isDuplicatedName(allCarOfRacingGame));
         return allCarOfRacingGame;
     }

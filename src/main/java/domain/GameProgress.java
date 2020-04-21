@@ -2,12 +2,14 @@ package domain;
 
 import util.RandomNumberGenerator;
 
+import java.util.List;
+
 public class GameProgress {
-    public static Car[] makeCar(String[] allCarOfRacingGame) {
-        Car[] cars = new Car[allCarOfRacingGame.length];
+    public static Car[] makeCar(List<String> allCarOfRacingGame) {
+        Car[] cars = new Car[allCarOfRacingGame.size()];
 
         for (int i = 0; i < cars.length; i++) {
-            cars[i] = new Car(allCarOfRacingGame[i].trim());
+            cars[i] = new Car(allCarOfRacingGame.get(i).trim());
         }
 
         return cars;

@@ -6,11 +6,13 @@ import domain.WinnerProgress;
 import view.InputView;
 import view.OutputView;
 
+import java.util.List;
+
 
 public class RacingGame {
     public void run() {
-        String[] carsName = InputView.inputCarsName();
-        Car[] cars = GameProgress.makeCar(carsName);
+        List<String> carNames = InputView.inputCarNames();
+        Car[] cars = GameProgress.makeCar(carNames);
         int round = InputView.inputRound();
 
         for (int i = 0; i < round; i++) {

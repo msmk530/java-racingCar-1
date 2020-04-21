@@ -3,6 +3,7 @@ package domain;
 import com.sun.org.apache.bcel.internal.generic.DUP;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Validator {
@@ -13,7 +14,7 @@ public class Validator {
     private static final int MAXIMUM_CAR_NAME_LENGTH = 5;
     private static final int MINIMUM_ROUND_NUMBER = 1;
 
-    public static boolean isValidNameLength(String[] allCarOfRacingGame) {
+    public static boolean isValidNameLength(List<String> allCarOfRacingGame) {
         for (String carName : allCarOfRacingGame) {
             if (carName.length() < MINIMUM_CAR_NAME_LENGTH || carName.length() > MAXIMUM_CAR_NAME_LENGTH) {
                 System.out.println(CAR_NAME_LENGTH_ERROR_MESSAGE);
@@ -23,14 +24,14 @@ public class Validator {
         return true;
     }
 
-    public static boolean isDuplicatedName(String[] allCarOfRacingGame) {
+    public static boolean isDuplicatedName(List<String> allCarOfRacingGame) {
         Set<String> duplicateValidator = new HashSet<>();
 
         for (String carName : allCarOfRacingGame) {
             duplicateValidator.add(carName);
         }
 
-        if (allCarOfRacingGame.length != duplicateValidator.size()) {
+        if (allCarOfRacingGame.size() != duplicateValidator.size()) {
             System.out.println(DUPLICATE_NAME_ERROR_MESSAGE);
             return false;
         }
