@@ -9,6 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CarTest {
+    private static final int IMPOSSIBLE_NUMBER_FOR_UPDATE_POSITION = 3;
     private Car car;
 
     @BeforeEach
@@ -18,23 +19,17 @@ class CarTest {
 
     @Test
     void 생성자_테스트() {
-        List<Car> testCar = new LinkedList<>();
-        testCar.add(new Car("min"));
-        testCar.add(new Car("kim"));
+        List<Car> testCars = new LinkedList<>();
+        testCars.add(new Car("min"));
+        testCars.add(new Car("kim"));
 
-        assertThat(testCar).extracting("name").contains("kim");
-        assertThat(testCar).extracting("name").contains("sub");
-    }
-
-    @Test
-    void 랜덤숫자에따른_이동여부_테스트() {
-        assertThat(car.isCarMove(3)).isTrue();
+        assertThat(testCars).extracting("name").contains("kim");
+        assertThat(testCars).extracting("name").contains("sub");
     }
 
     @Test
     void 랜덤숫자에따른_포지션_업데이트_테스트() {
-        Car positionTestCar = new Car("min");
-        positionTestCar.updatePosition(4);
+        car.updatePosition(IMPOSSIBLE_NUMBER_FOR_UPDATE_POSITION);
         assertThat(car.getPosition()).isEqualTo(1);
     }
 }
