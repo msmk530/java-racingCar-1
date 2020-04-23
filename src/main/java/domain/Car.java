@@ -28,16 +28,16 @@ public class Car {
         return random >= POSSIBLE_NUMBER_FOR_MOVE;
     }
 
+    public boolean isWinner(int winnerPosition) {
+        return position == winnerPosition;
+    }
+
     public int getPosition() {
         return position;
     }
 
     public String getName() {
         return name;
-    }
-
-    public boolean isWinner(int winnerPosition) {
-        return position == winnerPosition;
     }
 }
 
