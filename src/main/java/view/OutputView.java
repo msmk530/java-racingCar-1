@@ -16,9 +16,7 @@ public class OutputView {
 
     public static void printMoveProgress(List<Car> cars) {
         for (Car car : cars) {
-            int carPosition = car.getPosition();
-            String carName = car.getName();
-            currentPositionPrint(carName, carPosition);
+            currentPositionPrint(car.getName(), car.getPosition());
             System.out.print("\n");
         }
         System.out.print("\n\n");
