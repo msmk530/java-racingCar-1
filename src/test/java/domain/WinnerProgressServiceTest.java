@@ -33,7 +33,7 @@ class WinnerProgressServiceTest {
 
     @Test
     void 우승자_추출_테스트() {
-        List<String> winnerName = WinnerProgressService.extractWinners(cars,winnerPosition);
+        List<String> winnerName = WinnerProgressService.extractWinners(cars, winnerPosition);
         assertThat(winnerName).contains("kim");
     }
 }

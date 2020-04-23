@@ -5,8 +5,6 @@ import util.RandomNumberGenerator;
 import java.util.Objects;
 
 public class Car {
-    private static final String INDICATION_CAR_MOVE = "-";
-    private static final String COLON_FOR_CAR_MOVE = " : ";
     private static final int POSSIBLE_NUMBER_FOR_MOVE = 4;
     private static final int START_POSITION = 0;
 

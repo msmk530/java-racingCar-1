@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class WinnerProgressService {
-
     private WinnerProgressService() {
         throw new AssertionError();
     }

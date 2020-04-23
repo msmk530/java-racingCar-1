@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ValidatorTest {
-
     @Test
     void 문자열_길이_테스트() {
         List<String> carNames = new LinkedList<>();
@@ -26,7 +25,7 @@ class ValidatorTest {
 
     @Test
     void 중복_이름_테스트() {
-        String[] testNames = {"kim","min","sub","kim"};
+        String[] testNames = {"kim", "min", "sub", "kim"};
         List<String> carNames = Arrays.asList(testNames);
         assertThat(Validator.isDuplicatedName(carNames)).isTrue();
     }

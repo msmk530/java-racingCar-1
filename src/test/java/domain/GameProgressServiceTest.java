@@ -34,7 +34,7 @@ class GameProgressServiceTest {
             assertThat(car.getPosition()).isEqualTo(0);
         }
 
-        GameProgressService.progressRound(cars,strategy);
+        GameProgressService.progressRound(cars, strategy);
 
         for (Car car : cars) {
             if (car.getPosition() == 0) {

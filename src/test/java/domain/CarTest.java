@@ -51,7 +51,7 @@ class CarTest {
             cars.add(new Car(carNames.get(i)));
         }
 
-        for (int i = 0; i< WINNER_POSITION; i++) {
+        for (int i = 0; i < WINNER_POSITION; i++) {
             cars.get(2).updatePosition(strategy);
         }
 
