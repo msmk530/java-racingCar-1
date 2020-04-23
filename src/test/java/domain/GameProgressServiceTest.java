@@ -9,6 +9,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GameProgressServiceTest {
+    private static final int NO_UPDATE_POSITION = 0;
+
     private List<Car> cars;
 
     @BeforeEach
@@ -31,13 +33,13 @@ class GameProgressServiceTest {
         CarMovingStrategy strategy = new CarMovingStrategyMock();
 
         for (Car car : cars) {
-            assertThat(car.getPosition()).isEqualTo(0);
+            assertThat(car.getPosition()).isEqualTo(NO_UPDATE_POSITION);
         }
 
         GameProgressService.progressRound(cars, strategy);
 
         for (Car car : cars) {
-            if (car.getPosition() == 0) {
+            if (car.getPosition() == NO_UPDATE_POSITION) {
                 updateFlag = false;
             }
         }
