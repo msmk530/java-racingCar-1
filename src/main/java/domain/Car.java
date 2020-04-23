@@ -25,10 +25,7 @@ public class Car {
     }
 
     private boolean isCarMove(int random) {
-        if (random >= POSSIBLE_NUMBER_FOR_MOVE) {
-            return true;
-        }
-        return false;
+        return random >= POSSIBLE_NUMBER_FOR_MOVE;
     }
 
     public int getPosition() {
@@ -40,10 +37,7 @@ public class Car {
     }
 
     public boolean isWinner(int winnerPosition) {
-        if (position == winnerPosition) {
-            return true;
-        }
-        return false;
+        return position == winnerPosition;
     }
 }
 
