@@ -9,7 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class GameProgressServiceTest {
-    private Car[] cars;
+    private List<Car> cars;
 
     @BeforeEach
     void setUp() {
@@ -20,9 +20,9 @@ class GameProgressServiceTest {
 
     @Test
     void 자동차_만들기_테스트() {
-        assertThat(cars[0].getName()).isEqualTo("kim");
-        assertThat(cars[1].getName()).isEqualTo("min");
-        assertThat(cars[2].getName()).isEqualTo("sub");
+        assertThat(cars.get(0).getName()).isEqualTo("kim");
+        assertThat(cars.get(1).getName()).isEqualTo("min");
+        assertThat(cars.get(2).getName()).isEqualTo("sub");
     }
 
     @Test

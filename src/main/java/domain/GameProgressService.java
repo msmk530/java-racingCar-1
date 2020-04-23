@@ -2,6 +2,7 @@ package domain;
 
 import util.RandomNumberGenerator;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class GameProgressService {
@@ -9,17 +10,17 @@ public class GameProgressService {
         throw new AssertionError();
     }
 
-    public static Car[] makeCar(List<String> allCarOfRacingGame) {
-        Car[] cars = new Car[allCarOfRacingGame.size()];
+    public static List<Car> makeCar(List<String> allCarOfRacingGame) {
+        List<Car> cars = new LinkedList<>();
 
-        for (int i = 0; i < cars.length; i++) {
-            cars[i] = new Car(allCarOfRacingGame.get(i).trim());
+        for (int i = 0; i < allCarOfRacingGame.size() ; i++) {
+            cars.add(new Car(allCarOfRacingGame.get(i).trim()));
         }
 
         return cars;
     }
 
-    public static void progressRound(Car[] cars) {
+    public static void progressRound(List<Car> cars) {
         for (Car car : cars) {
             car.updatePosition(RandomNumberGenerator.generateRandomNumber());
         }

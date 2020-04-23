@@ -3,22 +3,23 @@ package domain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class WinnerProgressServiceTest {
-    private Car[] cars;
+    private List<Car> cars = new LinkedList<>();
 
     @BeforeEach
     void setUp() {
-        cars = new Car[3];
         String[] carName = {"kim", "min", "sub"};
 
         for (int i = 0; i < 3; i++) {
-            cars[i] = new Car(carName[i]);
+            cars.add(new Car(carName[i]));
         }
-
-        cars[0].updatePosition(4);
-        cars[0].updatePosition(4);
+        cars.get(0).updatePosition(4);
+        cars.get(0).updatePosition(4);
     }
 
     @Test
@@ -29,7 +30,7 @@ class WinnerProgressServiceTest {
 
     @Test
     void 우승자_추출_테스트() {
-        String winnerName = cars[0].getName();
+        String winnerName = cars.get(0).getName();
         assertThat(winnerName).isEqualTo("min");
     }
 }

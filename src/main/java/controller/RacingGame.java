@@ -12,7 +12,7 @@ import java.util.List;
 public class RacingGame {
     public void run() {
         List<String> carNames = InputView.inputCarNames();
-        Car[] cars = GameProgressService.makeCar(carNames);
+        List<Car> cars = GameProgressService.makeCar(carNames);
         int round = InputView.inputRound();
 
         for (int i = 0; i < round; i++) {

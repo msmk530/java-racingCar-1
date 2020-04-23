@@ -14,7 +14,7 @@ public class OutputView {
         throw new AssertionError();
     }
 
-    public static void printMoveProgress(Car[] cars) {
+    public static void printMoveProgress(List<Car> cars) {
         for (Car car : cars) {
             int carPosition = car.getPosition();
             String carName = car.getName();
