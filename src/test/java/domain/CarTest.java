@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import util.RandomNumberGenerator;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CarTest {
     private static final int POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION = 4;
     private static final int WINNER_POSITION = 3;
+    private static final CarMovingStrategy strategy = new CarMovingStrategyMock();
 
     private Car car;
 
@@ -30,12 +32,12 @@ class CarTest {
         int randomNumber = RandomNumberGenerator.generateRandomNumber();
 
         if (randomNumber < POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION) {
-            car.updatePosition(randomNumber);
+            car.updatePosition(strategy);
             assertThat(car.getPosition()).isEqualTo(0);
         }
 
         if (randomNumber >= POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION) {
-            car.updatePosition(randomNumber);
+            car.updatePosition(strategy);
             assertThat(car.getPosition()).isEqualTo(1);
         }
     }
@@ -43,18 +45,18 @@ class CarTest {
     @Test
     void 우승할_포지션값을_가졌는지_테스트() {
         List<Car> cars = new LinkedList<>();
-        String[] carNames = {"kim", "min", "sub"};
+        List<String> carNames = new LinkedList<>(Arrays.asList("kim", "min", "sub"));
 
-        for (int i = 0; i < carNames.length; i++) {
-            cars.add(new Car(carNames[i]));
+        for (int i = 0; i < carNames.size(); i++) {
+            cars.add(new Car(carNames.get(i)));
         }
 
-        for (int i = 0; i < WINNER_POSITION; i++) {
-            cars.get(2).updatePosition(POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION);
+        for (int i = 0; i< WINNER_POSITION; i++) {
+            cars.get(2).updatePosition(strategy);
         }
 
-        assertThat(cars.get(0).isWinner(WINNER_POSITION)).isTrue();
-        assertThat(cars.get(1).isWinner(WINNER_POSITION)).isTrue();
-        assertThat(cars.get(2).isWinner(WINNER_POSITION)).isTrue();
+        for (Car car : cars) {
+            assertThat(car.isWinner(WINNER_POSITION)).isTrue();
+        }
     }
 }

@@ -1,8 +1,6 @@
 package controller;
 
-import domain.Car;
-import domain.GameProgressService;
-import domain.WinnerProgressService;
+import domain.*;
 import view.InputView;
 import view.OutputView;
 
@@ -13,9 +11,10 @@ public class RacingGame {
     public void run() {
         List<Car> cars = GameProgressService.makeCar(InputView.inputCarNames());
         int round = InputView.inputRound();
+        CarMovingStrategy strategy = new RandomNumberMovingStrategy();
 
         for (int i = 0; i < round; i++) {
-            GameProgressService.progressRound(cars);
+            GameProgressService.progressRound(cars, strategy);
             OutputView.printMoveProgress(cars);
         }
 

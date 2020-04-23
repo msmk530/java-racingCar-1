@@ -27,21 +27,21 @@ class GameProgressServiceTest {
 
     @Test
     void 라운드_진행_테스트() {
-        boolean updateFlag = false;
+        boolean updateFlag = true;
+        CarMovingStrategy strategy = new CarMovingStrategyMock();
 
         for (Car car : cars) {
             assertThat(car.getPosition()).isEqualTo(0);
         }
 
-        GameProgressService.progressRound(cars);
+        GameProgressService.progressRound(cars,strategy);
 
         for (Car car : cars) {
-            if (car.getPosition() != 0) {
-                updateFlag = true;
-                break;
+            if (car.getPosition() == 0) {
+                updateFlag = false;
             }
         }
 
-        assertThat(updateFlag).isEqualTo(true);
+        assertThat(updateFlag).isTrue();
     }
 }

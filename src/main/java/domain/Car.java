@@ -18,8 +18,8 @@ public class Car {
         this.position = START_POSITION;
     }
 
-    public void updatePosition(int random) {
-        if (isCarMove(random)) {
+    public void updatePosition(CarMovingStrategy strategy) {
+        if (isCarMove(strategy.generate())) {
             position++;
         }
     }
