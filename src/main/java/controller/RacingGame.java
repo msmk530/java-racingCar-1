@@ -1,8 +1,8 @@
 package controller;
 
 import domain.Car;
-import domain.GameProgress;
-import domain.WinnerProgress;
+import domain.GameProgressService;
+import domain.WinnerProgressService;
 import view.InputView;
 import view.OutputView;
 
@@ -12,15 +12,15 @@ import java.util.List;
 public class RacingGame {
     public void run() {
         List<String> carNames = InputView.inputCarNames();
-        Car[] cars = GameProgress.makeCar(carNames);
+        Car[] cars = GameProgressService.makeCar(carNames);
         int round = InputView.inputRound();
 
         for (int i = 0; i < round; i++) {
-            GameProgress.progressRound(cars);
+            GameProgressService.progressRound(cars);
             OutputView.printMoveProgress(cars);
         }
 
-        int winnerPosition = WinnerProgress.calculateWinnerPosition(cars);
-        OutputView.printWinners(WinnerProgress.extractWinners(cars, winnerPosition));
+        int winnerPosition = WinnerProgressService.calculateWinnerPosition(cars);
+        OutputView.printWinners(WinnerProgressService.extractWinners(cars, winnerPosition));
     }
 }

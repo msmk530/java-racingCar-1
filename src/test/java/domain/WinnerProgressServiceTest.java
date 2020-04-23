@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class WinnerProgressTest {
+class WinnerProgressServiceTest {
     private Car[] cars;
 
     @BeforeEach
@@ -23,7 +23,7 @@ class WinnerProgressTest {
 
     @Test
     void 우승자의_포지션값_테스트() {
-        int winnerPosition = WinnerProgress.calculateWinnerPosition(cars);
+        int winnerPosition = WinnerProgressService.calculateWinnerPosition(cars);
         assertThat(winnerPosition).isEqualTo(1);
     }
 

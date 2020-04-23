@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class WinnerProgress {
+public class WinnerProgressService {
 
-    private WinnerProgress() {
+    private WinnerProgressService() {
         throw new AssertionError();
     }
 

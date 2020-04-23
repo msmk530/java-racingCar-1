@@ -8,14 +8,14 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class GameProgressTest {
+class GameProgressServiceTest {
     private Car[] cars;
 
     @BeforeEach
     void setUp() {
         String[] allCarOfName = {"kim  ", "min  ", "sub  "};
         List<String> carNames = Arrays.asList(allCarOfName);
-        cars = GameProgress.makeCar(carNames);
+        cars = GameProgressService.makeCar(carNames);
     }
 
     @Test
@@ -33,7 +33,7 @@ class GameProgressTest {
             assertThat(car.getPosition()).isEqualTo(0);
         }
 
-        GameProgress.progressRound(cars);
+        GameProgressService.progressRound(cars);
 
         for (Car car : cars) {
             if (car.getPosition() != 0) {

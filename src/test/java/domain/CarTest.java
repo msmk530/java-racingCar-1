@@ -10,6 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class CarTest {
     private static final int IMPOSSIBLE_NUMBER_FOR_UPDATE_POSITION = 3;
+    private static final int POSSIBLE_NUMBER_FOR_UPDATE_POSITION = 4;
+
     private Car car;
 
     @BeforeEach
@@ -30,6 +32,8 @@ class CarTest {
     @Test
     void 랜덤숫자에따른_포지션_업데이트_테스트() {
         car.updatePosition(IMPOSSIBLE_NUMBER_FOR_UPDATE_POSITION);
+        assertThat(car.getPosition()).isEqualTo(1);
+        car.updatePosition(POSSIBLE_NUMBER_FOR_UPDATE_POSITION);
         assertThat(car.getPosition()).isEqualTo(1);
     }
 }

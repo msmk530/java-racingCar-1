@@ -4,8 +4,8 @@ import util.RandomNumberGenerator;
 
 import java.util.List;
 
-public class GameProgress {
-    private GameProgress() {
+public class GameProgressService {
+    private GameProgressService() {
         throw new AssertionError();
     }
 
