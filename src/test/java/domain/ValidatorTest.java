@@ -15,17 +15,17 @@ class ValidatorTest {
     void 문자열_길이_테스트() {
         List<String> carNames = new LinkedList<>();
         carNames.add("kimminsub");
-        assertThat(Validator.isValidNameLength(carNames)).isTrue();
+        assertThat(Validator.isValidNameLength(carNames)).isFalse();
     }
 
     @Test
     void 라운드_숫자_테스트() {
-        assertThat(Validator.isValidRoundNumber(-1)).isTrue();
+        assertThat(Validator.isValidRoundNumber(-1)).isFalse();
     }
 
     @Test
     void 중복_이름_테스트() {
         List<String> carNames = new LinkedList<>(Arrays.asList("kim", "min", "sub", "kim"));
-        assertThat(Validator.isDuplicatedName(carNames)).isTrue();
+        assertThat(Validator.isDuplicatedName(carNames)).isFalse();
     }
 }

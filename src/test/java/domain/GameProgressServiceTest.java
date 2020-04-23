@@ -30,7 +30,7 @@ class GameProgressServiceTest {
     @Test
     void 라운드_진행_테스트() {
         boolean updateFlag = true;
-        CarMovingStrategy strategy = new CarMovingStrategyMock();
+        CarMovingStrategy strategy = new PossibleCarMovingStrategyMock();
 
         for (Car car : cars) {
             assertThat(car.getPosition()).isEqualTo(NO_UPDATE_POSITION);

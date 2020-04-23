@@ -1,6 +1,6 @@
 package domain;
 
-public class CarMovingStrategyMock implements CarMovingStrategy {
+public class PossibleCarMovingStrategyMock implements CarMovingStrategy {
     private static final int POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION = 4;
 
     @Override

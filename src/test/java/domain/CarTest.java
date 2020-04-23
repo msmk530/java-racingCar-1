@@ -13,7 +13,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CarTest {
     private static final int POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION = 4;
     private static final int WINNER_POSITION = 3;
-    private static final CarMovingStrategy strategy = new CarMovingStrategyMock();
+    private static final CarMovingStrategy possibleStrategy = new PossibleCarMovingStrategyMock();
+    private static final CarMovingStrategy impossibleStrategy = new ImpossibleCarMovingStrategyMock();
 
     private Car car;
 
@@ -32,12 +33,12 @@ class CarTest {
         int randomNumber = RandomNumberGenerator.generateRandomNumber();
 
         if (randomNumber < POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION) {
-            car.updatePosition(strategy);
+            car.updatePosition(impossibleStrategy);
             assertThat(car.getPosition()).isEqualTo(0);
         }
 
         if (randomNumber >= POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION) {
-            car.updatePosition(strategy);
+            car.updatePosition(possibleStrategy);
             assertThat(car.getPosition()).isEqualTo(1);
         }
     }
@@ -52,11 +53,11 @@ class CarTest {
         }
 
         for (int i = 0; i < WINNER_POSITION; i++) {
-            cars.get(2).updatePosition(strategy);
+            cars.get(2).updatePosition(possibleStrategy);
         }
 
-        for (Car car : cars) {
-            assertThat(car.isWinner(WINNER_POSITION)).isTrue();
-        }
+        assertThat(cars.get(0).isWinner(WINNER_POSITION)).isFalse();
+        assertThat(cars.get(1).isWinner(WINNER_POSITION)).isFalse();
+        assertThat(cars.get(2).isWinner(WINNER_POSITION)).isTrue();
     }
 }

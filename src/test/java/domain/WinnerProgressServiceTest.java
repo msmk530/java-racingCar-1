@@ -15,7 +15,7 @@ class WinnerProgressServiceTest {
 
     @BeforeEach
     void setUp() {
-        CarMovingStrategy strategy = new CarMovingStrategyMock();
+        CarMovingStrategy strategy = new PossibleCarMovingStrategyMock();
         List<String> carName = new LinkedList<>(Arrays.asList("kim", "min", "sub"));
 
         for (int i = 0; i < 3; i++) {
