@@ -10,7 +10,7 @@ public class Car {
     private static final int POSSIBLE_NUMBER_FOR_MOVE = 4;
     private static final int START_POSITION = 0;
 
-    private String name;
+    private final String name;
     private int position;
 
     public Car(String name) {
