@@ -1,6 +1,7 @@
 package controller;
 
 import domain.*;
+import util.RandomNumberGenerator;
 import view.InputView;
 import view.OutputView;
 
@@ -11,7 +12,7 @@ public class RacingGame {
     public void run() {
         List<Car> cars = GameProgressService.makeCar(InputView.inputCarNames());
         int round = InputView.inputRound();
-        CarMovingStrategy strategy = new RandomNumberMovingStrategy();
+        CarMovingStrategy strategy = () -> RandomNumberGenerator.generateRandomNumber();
 
         for (int i = 0; i < round; i++) {
             GameProgressService.progressRound(cars, strategy);

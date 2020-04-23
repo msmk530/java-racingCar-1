@@ -12,10 +12,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class CarTest {
     private static final int POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION = 4;
+    private static final int IMPOSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION = 3;
     private static final int WINNER_POSITION = 3;
-    private static final CarMovingStrategy possibleStrategy = new PossibleCarMovingStrategyMock();
-    private static final CarMovingStrategy impossibleStrategy = new ImpossibleCarMovingStrategyMock();
 
+    private CarMovingStrategy possibleStrategy = () -> POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION;
+    private CarMovingStrategy impossibleStrategy = () -> IMPOSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION;
     private Car car;
 
     @BeforeEach

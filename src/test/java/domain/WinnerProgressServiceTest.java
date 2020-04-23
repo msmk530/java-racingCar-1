@@ -10,20 +10,22 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class WinnerProgressServiceTest {
+    public static final int POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION = 4;
+
     private List<Car> cars = new LinkedList<>();
     private int winnerPosition;
 
     @BeforeEach
     void setUp() {
-        CarMovingStrategy strategy = new PossibleCarMovingStrategyMock();
+        CarMovingStrategy possibleStrategy = () -> POSSIBLE_FLAG_NUMBER_FOR_UPDATE_POSITION;
         List<String> carName = new LinkedList<>(Arrays.asList("kim", "min", "sub"));
 
         for (int i = 0; i < 3; i++) {
             cars.add(new Car(carName.get(i)));
         }
 
-        cars.get(0).updatePosition(strategy);
-        cars.get(0).updatePosition(strategy);
+        cars.get(0).updatePosition(possibleStrategy);
+        cars.get(0).updatePosition(possibleStrategy);
         winnerPosition = WinnerProgressService.calculateWinnerPosition(cars);
     }
 
