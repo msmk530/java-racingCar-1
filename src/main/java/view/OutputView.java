@@ -22,6 +22,10 @@ public class OutputView {
         System.out.print("\n\n");
     }
 
+    public static void printErrorMessage(String errorMessage) {
+        System.out.println(errorMessage);
+    }
+
     private static void currentPositionPrint(String carName, int carPosition) {
         System.out.print(carName + COLON_FOR_CAR_MOVE);
         for (int i = 0; i < carPosition; i++) {
@@ -33,4 +37,6 @@ public class OutputView {
         String result = String.join(SEPARATOR_FOR_CAR_NAME, winners);
         System.out.println(result + PRINT_WINNER_MESSAGE);
     }
+
+
 }

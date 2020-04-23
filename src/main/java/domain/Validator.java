@@ -1,6 +1,7 @@
 package domain;
 
 import com.sun.org.apache.bcel.internal.generic.DUP;
+import view.OutputView;
 
 import java.util.HashSet;
 import java.util.List;
@@ -21,7 +22,7 @@ public class Validator {
     public static boolean isValidNameLength(List<String> allCarOfRacingGame) {
         for (String carName : allCarOfRacingGame) {
             if (carName.length() < MINIMUM_CAR_NAME_LENGTH || carName.length() > MAXIMUM_CAR_NAME_LENGTH) {
-                System.out.println(CAR_NAME_LENGTH_ERROR_MESSAGE);
+                OutputView.printErrorMessage(CAR_NAME_LENGTH_ERROR_MESSAGE);
                 return false;
             }
         }
@@ -36,7 +37,7 @@ public class Validator {
         }
 
         if (allCarOfRacingGame.size() != duplicateValidator.size()) {
-            System.out.println(DUPLICATE_NAME_ERROR_MESSAGE);
+            OutputView.printErrorMessage(DUPLICATE_NAME_ERROR_MESSAGE);
             return false;
         }
 
@@ -45,7 +46,7 @@ public class Validator {
 
     public static boolean isValidRoundNumber(int round) {
         if (round < MINIMUM_ROUND_NUMBER) {
-            System.out.println(ROUND_NUMBER_ERROR_MESSAGE);
+            OutputView.printErrorMessage(ROUND_NUMBER_ERROR_MESSAGE);
             return false;
         }
         return true;
