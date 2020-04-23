@@ -25,8 +25,7 @@ class ValidatorTest {
 
     @Test
     void 중복_이름_테스트() {
-        String[] testNames = {"kim", "min", "sub", "kim"};
-        List<String> carNames = Arrays.asList(testNames);
+        List<String> carNames = new LinkedList<>(Arrays.asList("kim", "min", "sub", "kim"));
         assertThat(Validator.isDuplicatedName(carNames)).isTrue();
     }
 }

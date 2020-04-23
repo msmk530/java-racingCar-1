@@ -3,6 +3,7 @@ package domain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,10 +16,10 @@ class WinnerProgressServiceTest {
     @BeforeEach
     void setUp() {
         CarMovingStrategy strategy = new CarMovingStrategyMock();
-        String[] carName = {"kim", "min", "sub"};
+        List<String> carName = new LinkedList<>(Arrays.asList("kim", "min", "sub"));
 
         for (int i = 0; i < 3; i++) {
-            cars.add(new Car(carName[i]));
+            cars.add(new Car(carName.get(i)));
         }
 
         cars.get(0).updatePosition(strategy);
