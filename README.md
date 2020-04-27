@@ -7,6 +7,8 @@ java-racingcar
 4. else 예약어 사용 금지
 5. 함수의 길이가 15라인을 넘어가지 않도록 구현
 
+![racingImage](https://user-images.githubusercontent.com/49441876/80328426-45ffc880-887a-11ea-9575-53f6128af08e.jpeg)
+
 
 ## 구현해야할 기능
 1. 경주할 자동차 이름 입력받기
